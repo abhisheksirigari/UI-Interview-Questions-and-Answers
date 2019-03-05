@@ -118,7 +118,38 @@ let ds = function () {
 }
 ```
 
+##Simplest or Cleanest way to implement singleton in JavaScript
 ```javascript
-var s = "JavaScript syntax highlighting";
-alert(s);
+// Singleton is an object which can only be instantiated once. it is a pattern which creates a new instance of the class if one doesn't exist, if an instance already exists, it returns the reference to that object.
+var Singleton = (function () {
+    var instance;
+ 
+    function createInstance() {
+        var object = new Object("I am the instance");
+        return object;
+    }
+ 
+    return {
+        getInstance: function () {
+            if (!instance) {
+                instance = createInstance();
+            }
+            return instance;
+        }
+    };
+})();
+ 
+function run() {
+ 
+    var instance1 = Singleton.getInstance();
+    var instance2 = Singleton.getInstance();
+ 
+    alert("Same instance? " + (instance1 === instance2));  
+}
 ```
+
+```javascript
+//code
+```
+
+
