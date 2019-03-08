@@ -217,7 +217,7 @@ Ans: using subjects, event emiters, getters and setters or service
 ### 2. What are angular elements and example ?
 Ans: A custom element extends HTML by allowing you to define a tag whose content is created and controlled by JavaScript code. The browser maintains a CustomElementRegistry of defined custom elements (also called Web Components), which maps an instantiable JavaScript class to an HTML tag.
 
-The @angular/elements package exports a createCustomElement() API that provides a bridge from Angular's component interface and change detection functionality to the built-in DOM API.
+The @angular/elements package exports a createCustomElement() API that provides a bridge from Angular component interface and change detection functionality to the built-in DOM API.
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
