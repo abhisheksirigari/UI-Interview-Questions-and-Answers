@@ -312,6 +312,7 @@ for (var i = 0; i < 10; i++) {
     console.log(x);      
   }, 3000, i);
 }
+// Output: 1234
 
 ### 7. Diff between promise and Observables
 
