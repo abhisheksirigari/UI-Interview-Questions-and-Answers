@@ -150,6 +150,23 @@ function run() {
 }
 ```
 
+## Object comparision
+```javascript
+var person = {name: 'person'};
+objComparision(person);
+
+function objComparision(obj) {
+  if ( obj === {name: 'person'} ) {
+    console.log('Object Comparison Sucess');
+  } else {
+    console.log('Object Comparison Fail');
+  }
+}
+
+// Output: Object Comparison Fail
+// Description: Objects are typeless and reference allocated in memory differs
+```
+
 ```javascript
 //code
 ```
