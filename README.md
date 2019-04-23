@@ -1,4 +1,32 @@
 
+## Get the closest next or previous integer in a sorted array of integers
+```javascript
+// array = sorted array of integers
+// val = pivot element
+// dir = boolean, if true, returns the previous value
+ 
+function getVal(array, val, dir) {
+  for (var i=0; i < array.length; i++) {
+    if (dir == true) {
+      if (array[i] > val){
+        return array[i-1] || 0;
+      }
+    } else {
+      if (array[i] >= val) {
+        return array[i];
+      }
+    }
+  }
+}
+
+array = [0, 5, 7, 9, 22, 27];
+pivot = 11;
+ 
+getVal(array, pivot);        //Output: 22
+getVal(array, pivot, true);  //Output: 9
+
+```
+
 ## Function Expression VS. Function Statement
 ```javascript
 // Example: Function Expression
