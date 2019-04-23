@@ -1,4 +1,74 @@
 
+## Ways to create JS objects
+
+```javascript
+
+// Using the Object() constructor:
+   var d = new Object();
+   // This is the simplest way to create an empty object. I believe it is now discouraged.
+
+// Using Object.create() method:
+   var a = Object.create(null);
+   // This method creates a new object extending the prototype object passed as a parameter.
+
+// Using the bracket's syntactig sugar:
+   var b = {};
+   This is equivalent to Object.create(null) method, using a null prototype as an argument.
+
+// Using a function constructor
+   var Obj = function(name) {
+   this.name = name
+   }
+   var c = new Obj("hello"); 
+   // What the new operator does is call a function and setting this of the function to a fresh new Object, and binding the prototype of       that new Object to the function's prototype. As is:
+
+function f {};
+
+new f(a, b, c);
+
+Would be equivalent to: 
+// Create a new instance using f's prototype.
+var newInstance = Object.create(f.prototype)
+var result;
+
+// Call the function
+result = f.call(newInstance, a, b, c),
+
+// If the result is a non-null object, use it, otherwise use the new instance.
+result && typeof result === 'object' ? result : newInstance
+Using the function constructor + prototype:
+function myObj(){};
+myObj.prototype.name = "hello";
+var k = new myObj();
+Using ES6 class syntax:
+class myObject  {
+  constructor(name) {
+    this.name = name;
+  }
+}
+var e = new myObject("hello");
+Singleton pattern:
+var l = new function(){
+  this.name = "hello";
+}
+```
+
+## Ways to create JS objects 
+// is it exactly the same as:
+```javascript
+var p = {} vs var p2 = Object.create(null) ?
+
+// They are not equivalent. {}.constructor.prototype == Object.prototype while Object.create(null) doesn't inherit from anything and thus has no properties at all.
+// In other words: A javascript object inherits from Object by default, unless you explicitly create it with null as its prototype, like: Object.create(null).
+
+// {} would instead be equivalent to Object.create(Object.prototype).
+
+In Chrome Devtool you can see that Object.create(null) has no __proto__ property, while {} does.
+![object with object.create](https://i.stack.imgur.com/AtQ4c.png)
+
+```
+
+
 ## Promise and Callback
 
 Promise: The Promise object represents the eventual completion (or failure) of an asynchronous operation, 
@@ -49,8 +119,8 @@ Callback function : A callback function is a function passed into another functi
  // The above example is a synchronous callback, as it is executed immediately.
  Note, however, that callbacks are often used to continue code execution after an asynchronous operation 
  has completed — these are called asynchronous callbacks. A good example is the callback functions executed 
- inside a .then() block chained onto the end of a promise after that promise fulfills or rejects. This structure 
- is used in many modern web APIs, such as fetch().
+ inside a .then() block chained onto the end of a promise after that promise fulfills or rejects. This 
+ structure is used in many modern web APIs, such as fetch().
 ```
 
 
