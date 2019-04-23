@@ -1,3 +1,12 @@
+## Find the Max & Min number from given array in javascript
+```javascript
+    let arr = [1, 4, 6, 2, 9, 5, 3, 10];
+    console.log("find largest number : " + Math.max.apply(null, arr));
+    //Output: 10
+    console.log("find smallest number : " + Math.min.apply(null, arr));
+    //Output: 1
+```
+
 ## Find longest palindrome in a given string in javascript
 ```javascript
 console.log(longest_palindrome("HYTBCABADEFGHABCDEDCBAGHTFYW12345678987654321ZWETYGDE"));
