@@ -1,4 +1,4 @@
-## Find longest palindrome in a given string
+## Find longest palindrome in a given string in javascript
 ```javascript
 console.log(longest_palindrome("HYTBCABADEFGHABCDEDCBAGHTFYW12345678987654321ZWETYGDE"));
 //Output: 12345678987654321
