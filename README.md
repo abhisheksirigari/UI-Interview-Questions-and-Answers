@@ -1,3 +1,33 @@
+## Find longest palindrome in a given string
+```javascript
+console.log(longest_palindrome("HYTBCABADEFGHABCDEDCBAGHTFYW12345678987654321ZWETYGDE"));
+//Output: 12345678987654321
+
+function longest_palindrome(str1) {
+    var max_length = 0,
+        maxp = '';
+
+    for (var i = 0; i < str1.length; i++) {
+        var subs = str1.substr(i, str1.length);
+
+        for (var j = subs.length; j >= 0; j--) {
+            var sub_subs_str = subs.substr(0, j);
+            if (sub_subs_str.length <= 1)
+                continue;
+
+            if (isPalindrom(sub_subs_str)) {
+                if (sub_subs_str.length > max_length) {
+                    max_length = sub_subs_str.length;
+                    maxp = sub_subs_str;
+                }
+            }
+        }
+    }
+
+    return maxp;
+}
+```
+
 ## How to Get all Possible Combinations of Array with array length  
 ```javascript
 console.log(posibleCombinationsOfArr([['a', 'b'], ['c'], ['d', 'e', 'f'], ['g', 'h', 'i']]));
