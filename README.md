@@ -1,4 +1,57 @@
 
+## Promise and Callback
+
+Promise: The Promise object represents the eventual completion (or failure) of an asynchronous operation, 
+         and its resulting value.
+// Example: 
+ var promise1 = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    resolve('foo');
+  }, 300);
+ });
+ promise1.then(function(value) {
+  console.log(value); 
+  // expected output: "foo"
+ });
+ 
+ console.log(promise1);
+ // expected output: [object Promise]
+ 
+ A Promise is in one of these states:
+ pending: initial state, neither fulfilled nor rejected.
+ fulfilled: meaning that the operation completed successfully.
+ rejected: meaning that the operation failed.
+ 
+ A pending promise can either be fulfilled with a value, or rejected with a reason (error). 
+ When either of these options happens, the  associated handlers queued up by a promise's then 
+ method are called. (If the promise has already been fulfilled or rejected when a corresponding 
+ handler is attached, the handler will be called, so there is no race condition between an asynchronous 
+ operation completing and its handlers being attached.)
+ 
+ As the Promise.prototype.then() and Promise.prototype.catch() methods return promises, they can be chained.
+ ![promise structure](https://mdn.mozillademos.org/files/15911/promises.png)
+ 
+Callback function : A callback function is a function passed into another function as an argument, which is 
+                    then invoked inside the outer function to complete some kind of routine or action.
+
+// Example:
+ function greeting(name) {
+  alert('Hello ' + name);
+ }
+
+ function processUserInput(callback) {
+  var name = prompt('Please enter your name.');
+  callback(name);
+ }
+ processUserInput(greeting);
+ // The above example is a synchronous callback, as it is executed immediately.
+ Note, however, that callbacks are often used to continue code execution after an asynchronous operation 
+ has completed — these are called asynchronous callbacks. A good example is the callback functions executed 
+ inside a .then() block chained onto the end of a promise after that promise fulfills or rejects. This structure 
+ is used in many modern web APIs, such as fetch().
+
+
+
 ## Get the closest next or previous integer in a sorted array of integers
 ```javascript
 // array = sorted array of integers
@@ -19,8 +72,8 @@ function getVal(array, val, dir) {
   }
 }
 
-array = [0, 5, 7, 9, 22, 27];
-pivot = 11;
+var array = [0, 5, 7, 9, 22, 27];
+var pivot = 11;
  
 getVal(array, pivot);        //Output: 22
 getVal(array, pivot, true);  //Output: 9
@@ -37,14 +90,14 @@ getVal(array, pivot, true);  //Output: 9
     alert(foo()); // Alerts 5. Declarations are loaded before any code can run.
     function foo() { return 5; }
     
-// Function declarations load before any code is executed while Function expressions load only when the interpreter reaches that line of code.
+// Function declarations load before any code is executed while Function expressions load only when the 
+interpreter reaches that line of code.
     
 // Benefits of Function Expressions
-    There are several different ways that function expressions become more useful than function declarations.    
-    1. As closures
-    2. As arguments to other functions
-    3. As Immediately Invoked Function Expressions (IIFE)
-
+There are several different ways that function expressions become more useful than function declarations.    
+  1. As closures
+  2. As arguments to other functions
+  3. As Immediately Invoked Function Expressions (IIFE)
 ```
 
 ## Find the Max & Min number from given array in javascript
