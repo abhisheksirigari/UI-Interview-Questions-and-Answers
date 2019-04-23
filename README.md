@@ -4,6 +4,7 @@
 Promise: The Promise object represents the eventual completion (or failure) of an asynchronous operation, 
          and its resulting value.
 // Example: 
+```javascript
  var promise1 = new Promise(function(resolve, reject) {
   setTimeout(function() {
     resolve('foo');
@@ -16,7 +17,7 @@ Promise: The Promise object represents the eventual completion (or failure) of a
  
  console.log(promise1);
  // expected output: [object Promise]
- 
+ ```
  A Promise is in one of these states:
  pending: initial state, neither fulfilled nor rejected.
  fulfilled: meaning that the operation completed successfully.
@@ -34,6 +35,7 @@ Promise: The Promise object represents the eventual completion (or failure) of a
 Callback function : A callback function is a function passed into another function as an argument, which is 
                     then invoked inside the outer function to complete some kind of routine or action.
 
+```javascript
 // Example:
  function greeting(name) {
   alert('Hello ' + name);
@@ -49,7 +51,7 @@ Callback function : A callback function is a function passed into another functi
  has completed — these are called asynchronous callbacks. A good example is the callback functions executed 
  inside a .then() block chained onto the end of a promise after that promise fulfills or rejects. This structure 
  is used in many modern web APIs, such as fetch().
-
+```
 
 
 ## Get the closest next or previous integer in a sorted array of integers
