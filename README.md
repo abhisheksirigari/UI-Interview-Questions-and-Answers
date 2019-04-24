@@ -1,8 +1,30 @@
 
+## Date format in javascript
+```javascript
+// Write a function that converts user entered date formatted as M/D/YYYY to a format required by an 
+// API (YYYYMMDD). The parameter "userDate" and the return value are strings.
+// For example, it should convert user entered date "12/31/2014" to "20141231" suitable for the API.
+   function formatDate(userDate) {
+     // format from M/D/YYYY to YYYYMMDD
+     return new Date(userDate).yyyymmdd();
+   }
+
+   Date.prototype.yyyymmdd = function() {
+       var yyyy = this.getFullYear().toString();                                    
+       var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based         
+       var dd  = this.getDate().toString();
+       return yyyy + '' + (mm[1]?mm:"0"+mm[0]) + '' + (dd[1]?dd:"0"+dd[0]);
+   };
+
+   console.log(formatDate("12/31/2014"));
+
+// Output: 20141231
+```
+
 ## Ensure function
 ```javascript
-// ensure function so that it throws an error if called without arguments or the argument is undefined. 
-Otherwise it should return the given value.
+// ensure function so that it throws an error if called without arguments or the argument is undefined.
+// Otherwise it should return the given value.
    function ensure(value) {
       if (value == undefined) {
          throw new Error('no arguments');
@@ -34,7 +56,8 @@ Otherwise it should return the given value.
    this.name = name
    }
    var c = new Obj("hello"); 
-   // What the new operator does is call a function and setting this of the function to a fresh new Object, and binding the prototype of       that new Object to the function's prototype. As is:
+   // What the new operator does is call a function and setting this of the function to a fresh new Object, 
+   // and binding the prototype of that new Object to the function's prototype. As is:
 
    function f {};
    new f(a, b, c);
@@ -74,8 +97,10 @@ Otherwise it should return the given value.
 ```javascript
 var p = {} vs var p2 = Object.create(null) ?
 
-// They are not equivalent. {}.constructor.prototype == Object.prototype while Object.create(null) doesn't inherit from anything and thus has no properties at all.
-// In other words: A javascript object inherits from Object by default, unless you explicitly create it with null as its prototype, like: Object.create(null).
+// They are not equivalent. {}.constructor.prototype == Object.prototype while Object.create(null) doesn't inherit 
+// from anything and thus has no properties at all.
+// In other words: A javascript object inherits from Object by default, unless you explicitly create it with null 
+// as its prototype, like: Object.create(null).
 
 // {} would instead be equivalent to Object.create(Object.prototype).
 
@@ -232,7 +257,8 @@ function longest_palindrome(str1) {
 ## How to Get all Possible Combinations of Array with array length  
 ```javascript
 console.log(posibleCombinationsOfArr([['a', 'b'], ['c'], ['d', 'e', 'f'], ['g', 'h', 'i']]));
-//Output: ["acdg", "bcdg", "aceg", "bceg", "acfg", "bcfg", "acdh", "bcdh", "aceh", "bceh", "acfh", "bcfh", "acdi", "bcdi", "acei", "bcei", "acfi", "bcfi"]
+//Output: ["acdg", "bcdg", "aceg", "bceg", "acfg", "bcfg", "acdh", "bcdh", "aceh", "bceh", "acfh", "bcfh", "acdi", 
+// "bcdi", "acei", "bcei", "acfi", "bcfi"]
 
 function posibleCombinationsOfArr(combinationArr) {
   if (combinationArr.length === 1) {
@@ -446,10 +472,12 @@ console.log("sort = " + array.sort()); // sort = 1,2,3,4,5,6,7,8,9
 Ans: using subjects, event emiters, getters and setters or service
 
 ### 2. What are angular elements and example ?
-Ans: A custom element extends HTML by allowing you to define a tag whose content is created and controlled by JavaScript code.
-The browser maintains a CustomElementRegistry of defined custom elements (also called Web Components), which maps an instantiable JavaScript class to an HTML tag.
+Ans: A custom element extends HTML by allowing you to define a tag whose content is created and controlled by 
+JavaScript code. The browser maintains a CustomElementRegistry of defined custom elements (also called Web Components), 
+which maps an instantiable JavaScript class to an HTML tag.
 
-The @angular/elements package exports a createCustomElement() API that provides a bridge from Angular component interface and change detection functionality to the built-in DOM API.
+The @angular/elements package exports a createCustomElement() API that provides a bridge from Angular component 
+interface and change detection functionality to the built-in DOM API.
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
