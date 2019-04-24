@@ -1,4 +1,21 @@
 
+## How to make array empty and which is best way
+```javascript
+// We can make an array empty in different ways , below are some of them
+
+// method 1
+let mainArray = ["1","2","3"]
+mainArray=[];
+console.log(mainArray); // []
+
+//Method 2
+let secondArray = ["1","2","3"]
+secondArray.length=0
+console.log(secondArray); // [] 
+
+//1st way we are creating another empty array but in second array we are 
+//making existing array length 0.
+```
 ## Date format in javascript
 ```javascript
 // Write a function that converts user entered date formatted as M/D/YYYY to a format required by an 
