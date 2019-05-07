@@ -1,4 +1,15 @@
 
+## Count how many times button is clicked without using global variable
+```javascript
+var my_button = document.getElementById('myButton');
+myButton.addEventListener('click', function(){
+	++document.getElementById('counter').innerHTML;
+});
+
+<input type="button" id="myButton" value="Click"/>
+Counter: <label id="counter"></label>
+```
+
 ## How to make array empty and which is best way
 ```javascript
 // We can make an array empty in different ways , below are some of them
