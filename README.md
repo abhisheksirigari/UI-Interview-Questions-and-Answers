@@ -1,4 +1,64 @@
 
+## Vertically align items center
+![vertically align middle](https://cmv-ds-images.s3.amazonaws.com/wp-content/uploads/centeranything-15.jpg)
+```javascript
+  // Five methods to align items vertically align center
+  <div class="box">
+  	<p>Center me</p>
+  </div>
+ <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ddd;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Method 1: */
+        .box {
+            display: table;
+        }
+        .box p {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        /* Method 2: */
+        .box {
+            position: relative;
+        }
+        .box p {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+        }
+
+        /* Method 3: */
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Method 4: */
+        .box {
+            display: grid;
+            place-items: center;
+        }
+
+        /* Method 5: */
+        .box {
+            /* display: grid; */
+            display: flex;
+        }
+        .box p {
+            margin: auto;
+        }
+    </style>
+```
+
 ## Javascript Stack Example like array
 ```javascript
 var stack = function () {
