@@ -1,4 +1,47 @@
 
+## Javascript Stack Example like array
+```javascript
+var stack = function () {
+    this.count = 0;
+    this.storage = {};
+
+    this.push = function (val) {
+	this.storage[this.count] = val;
+	this.count++;
+    }
+
+    this.pop = function () {
+	if (this.count == 0) {
+	    return undefined
+	}
+
+	this.count--;
+	var result = this.storage[this.count];
+	delete this.storage[this.count];
+	return result;
+    }
+
+    this.size = function () {
+	return this.count;
+    }
+
+    this.peek = function (val) {
+	return this.storage[this.count-1];
+    }
+
+}
+var mystack = new stack();
+
+mystack.push("one");
+mystack.push("two");
+console.log(mystack);
+console.log(mystack.pop());
+mystack.push("three");
+mystack.push("four");
+console.log(mystack.peek());
+console.log(mystack.size());
+```	
+	
 ## Count how many times button is clicked without using global variable
 ```javascript
 var my_button = document.getElementById('myButton');
