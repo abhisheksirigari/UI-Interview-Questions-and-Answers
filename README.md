@@ -498,8 +498,8 @@ function objComparision(obj) {
 ## Console log returns True or False
 ```javascript
 console.log("returns true or false start");
-console.log([]); //empty array
-console.log({}); //empty object
+console.log([]); // [] empty array
+console.log({}); // {} empty object
 console.log(typeof [] + []); // object
 console.log({} + []); // [object Object]
 console.log(1); // 1
