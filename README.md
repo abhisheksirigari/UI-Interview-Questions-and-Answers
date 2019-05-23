@@ -1,4 +1,21 @@
 
+## Find vowels in a given string
+```jaascript
+console.log( findVowels('ahelilosu') );
+const findVowels = str => {
+        let count = 0
+        const vowels = ['a', 'e', 'i', 'o', 'u']
+        for (let char of str.toLowerCase()) {
+                if (vowels.includes(char)) {
+                        count++
+                }
+        }
+        return count
+};
+
+// Output: 5
+```
+
 ## Vertically align items center
 ![vertically align middle](https://cmv-ds-images.s3.amazonaws.com/wp-content/uploads/centeranything-15.jpg)
 ```javascript
