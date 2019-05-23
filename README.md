@@ -2,6 +2,8 @@
 ## Find vowels in a given string
 ```jaascript
 console.log( findVowels('ahelilosu') );
+
+// Method 1:
 const findVowels = str => {
         let count = 0
         const vowels = ['a', 'e', 'i', 'o', 'u']
@@ -12,6 +14,13 @@ const findVowels = str => {
         }
         return count
 };
+
+// Method 2:
+const findVowels = str => {
+        const matched = str.match(/[aeiou]/gi)
+        return matched ? matched.length : 0
+}
+
 
 // Output: 5
 ```
