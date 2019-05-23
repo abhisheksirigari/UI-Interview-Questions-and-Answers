@@ -1,4 +1,14 @@
 
+
+## What is the value of typeof undefined == typeof NULL?
+```javascript
+
+The expression will be evaluated to true, since NULL will be treated as any other undefined variable.
+Note: JavaScript is case-sensitive and here we are using NULL instead of null.
+
+```
+
+
 ## Output out of the following code?
 ```javascript
 
