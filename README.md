@@ -1,4 +1,22 @@
 
+## Output out of the following code?
+```javascript
+
+var a = {};
+var b = { key: 'b' };
+var c = { key: 'c' };
+
+console.log(a); // {}
+a[b] = 123;
+console.log(a); // {[object Object]: 123}
+a[c] = 456;
+console.log(a); // {[object Object]: 456}
+
+console.log(a[b]); // 456
+
+```
+
+
 ## Find vowels in a given string
 ```jaascript
 console.log( findVowels('ahelilosu') );
