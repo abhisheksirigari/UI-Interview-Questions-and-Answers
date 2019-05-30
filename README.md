@@ -1,4 +1,17 @@
 
+## What does SOLID stand for? What are its principles? 
+```javascript
+
+S.O.L.I.D is an acronym for the first five object-oriented design (OOD) principles by Robert C. Martin.
+
+S - Single-responsiblity principle. A class should have one and only one reason to change, meaning that a class should have only one job.
+O - Open-closed principle. Objects or entities should be open for extension, but closed for modification.
+L - Liskov substitution principle. Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.
+I - Interface segregation principle. A client should never be forced to implement an interface that it doesn't use or clients shouldn't be forced to depend on methods they do not use.
+D - Dependency Inversion Principle. Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions.
+
+```
+
 ## curry function add(a)(b) or add(a,b) should return the same value
 ```javascript
 
@@ -38,9 +51,12 @@ console.log(typeof aa); // undefined
 console.log(typeof bb); // number
 
 /*
-The variable a is undefined because it is scoped to the anonymous function and goes out of scope when the function completes. b on the other hand is in the global scope. This is because it is not declared inside the function; the var keyword only applies to a here, so b is hoisted to the global scope.
+The variable a is undefined because it is scoped to the anonymous function and goes out of scope 
+when the function completes. b on the other hand is in the global scope. This is because it is not 
+declared inside the function; the var keyword only applies to a here, so b is hoisted to the global scope.
 
-This is another good reason to enable strict mode; the above code would be an error in that case. Even when using strict mode the let or const keywords should be preferred to var in most cases.
+This is another good reason to enable strict mode; the above code would be an error in that case. Even 
+when using strict mode the let or const keywords should be preferred to var in most cases.
 */
 
 ```
