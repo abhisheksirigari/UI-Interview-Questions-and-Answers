@@ -1,4 +1,21 @@
 
+## Diff between typescript number vs Number
+```javascript
+JavaScript has the notion of primitive types (number, string, etc) and object types (Number, String, etc, which are manifest at runtime). TypeScript types number and Number refer to them, respectively. JavaScript will usually coerce an object type to its 
+primitive equivalent, or vice versa:
+
+var x = new Number(34);
+> undefined
+x
+> Number {}
+x + 1
+> 35
+
+The TypeScript type system rules deal with this (spec section 3.7) like this:
+For purposes of determining subtype, supertype, and assignment compatibility relationships, the Number, Boolean, and String 
+primitive types are treated as object types with the same properties as the ‘Number’, ‘Boolean’, and ‘String’ interfaces respectively.
+```
+
 ## What does SOLID stand for? What are its principles? 
 ```javascript
 
