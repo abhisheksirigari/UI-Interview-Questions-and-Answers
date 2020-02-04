@@ -1,4 +1,14 @@
 
+## Is Prototype pattern is good. why ?
+```javascript
+Angular or any other libraries uses this prototype pattern
+```
+
+## What is Callback Hell?
+```javascript
+The asynchronous function requires callbacks as a return parameter. When multiple asynchronous functions are chained together then callback hell situation comes up.
+```
+
 ## Diff between typescript number vs Number
 ```javascript
 JavaScript has the notion of primitive types (number, string, etc) and object types (Number, String, etc, 
