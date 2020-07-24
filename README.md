@@ -1,7 +1,8 @@
 
 ## Microservices VS Monolithic
 ```javascript
-Microservices are a hot topic in system design interviews. It is important to know why we use them instead of monolithic systems. 
+Microservices are a hot topic in system design interviews. It is important to know why we use them 
+instead of monolithic systems. 
 The short answer is: Scalability. The detailed one would be:
 
 Advantages:
@@ -9,10 +10,13 @@ Advantages:
 2) They allow new members to train for shorter periods and have less context before touching a system.
 3) Deployments are fluid and continuous for each service.
 4) They allow decoupling service logic on the basis of business responsibility
-5) They are more available as a single service having a bug does not bring down the entire system. This is called a single point of failure.
+5) They are more available as a single service having a bug does not bring down the entire system. This is 
+	called a single point of failure.
 6) Individual services can be written in different languages.
-7) The developer teams can talk to each other through API sheets instead of working on the same repository, which requires conflict resolution.
-8) New services can be tested easily and individually. The testing structure is close to unit testing compared to a monolith.
+7) The developer teams can talk to each other through API sheets instead of working on the same repository, 
+	which requires conflict resolution.
+8) New services can be tested easily and individually. The testing structure is close to unit testing compared 
+	to a monolith.
 
 Microservices are at a disadvantage to Monoliths in some cases. Monoliths are favorable when:
 1) The technical/developer team is very small
@@ -28,7 +32,8 @@ Angular or any other libraries uses this prototype pattern
 
 ## What is Callback Hell?
 ```javascript
-The asynchronous function requires callbacks as a return parameter. When multiple asynchronous functions are chained together then callback hell situation comes up.
+The asynchronous function requires callbacks as a return parameter. When multiple asynchronous functions are chained 
+together then callback hell situation comes up.
 ```
 
 ## Diff between typescript number vs Number
@@ -55,14 +60,15 @@ Boolean, and String primitive types are treated as object types with the same pr
 
 S.O.L.I.D is an acronym for the first five object-oriented design (OOD) principles by Robert C. Martin.
 
-S - Single-responsiblity principle. A class should have one and only one reason to change, meaning that a class should have only one job.
+S - Single-responsiblity principle. A class should have one and only one reason to change, meaning that a class
+	should have only one job.
 O - Open-closed principle. Objects or entities should be open for extension, but closed for modification.
-L - Liskov substitution principle. Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y 
-	of type S where S is a subtype of T.
-I - Interface segregation principle. A client should never be forced to implement an interface that it doesn't use or clients shouldn't be 
-	forced to depend on methods they do not use.
-D - Dependency Inversion Principle. Entities must depend on abstractions not on concretions. It states that the high level module must not 
-	depend on the low level module, but they should depend on abstractions.
+L - Liskov substitution principle. Let q(x) be a property provable about objects of x of type T. Then q(y) should 
+	be provable for objects y of type S where S is a subtype of T.
+I - Interface segregation principle. A client should never be forced to implement an interface that it doesn't use 
+	or clients shouldn't be forced to depend on methods they do not use.
+D - Dependency Inversion Principle. Entities must depend on abstractions not on concretions. It states that the 
+	high level module must not depend on the low level module, but they should depend on abstractions.
 
 ```
 
@@ -125,12 +131,14 @@ Note: JavaScript is case-sensitive and here we are using NULL instead of null.
 
 ## What is generator in JS?
 ```javascript
-Generators are functions which can be exited and later re-entered. Their context (variable bindings) will be saved across re-entrances. 
-Generator functions are written using the function* syntax. When called initially, generator functions do not execute any of their code, 
-instead returning a type of iterator called a Generator. When a value is consumed by calling the generator’s next method, the Generator 
-function executes until it encounters the yield keyword.
+Generators are functions which can be exited and later re-entered. Their context (variable bindings) will be 
+saved across re-entrances. 
+Generator functions are written using the function* syntax. When called initially, generator functions do not 
+execute any of their code, instead returning a type of iterator called a Generator. When a value is consumed 
+by calling the generator’s next method, the Generator function executes until it encounters the yield keyword.
 
-The function can be called as many times as desired and returns a new Generator each time, however each Generator may only be iterated once.
+The function can be called as many times as desired and returns a new Generator each time, however each 
+Generator may only be iterated once.
 
 function* makeRangeIterator(start = 0, end = Infinity, step = 1) {
     let iterationCount = 0;
@@ -144,17 +152,20 @@ function* makeRangeIterator(start = 0, end = Infinity, step = 1) {
 
 ## Explain the Prototype Design Pattern
 ```javascript
-The Prototype Pattern creates new objects, but rather than creating non-initialized objects it returns objects that are initialized with values 
-it copied from a prototype – or sample – object. The Prototype pattern is also referred to as the Properties pattern.
+The Prototype Pattern creates new objects, but rather than creating non-initialized objects it returns 
+objects that are initialized with values it copied from a prototype – or sample – object. The Prototype 
+pattern is also referred to as the Properties pattern.
 
-An example of where the Prototype pattern is useful is the initialization of business objects with values that match the default values in the 
-database. The prototype object holds the default values that are copied over into a newly created business object.
+An example of where the Prototype pattern is useful is the initialization of business objects with values 
+that match the default values in the database. The prototype object holds the default values that are copied
+over into a newly created business object.
 
-Classical languages rarely use the Prototype pattern, but JavaScript being a prototypal language uses this pattern in the construction of new 
-objects and their prototypes.
+Classical languages rarely use the Prototype pattern, but JavaScript being a prototypal language uses this 
+pattern in the construction of new objects and their prototypes.
 ```
 
-## Can you describe the main difference between a .forEach loop and a .map() loop and why you would pick one versus the other?
+## Can you describe the main difference between a .forEach loop and a .map() loop and why you would 
+## pick one versus the other?
 ```javascript
 To understand the differences between the two, let’s look at what each function does.
 
@@ -178,13 +189,15 @@ const doubled = a.map(num => {
 });
 
 // doubled = [2, 4, 6]
-The main difference between .forEach and .map() is that .map() returns a new array. If you need the result, but do not wish to mutate 
+The main difference between .forEach and .map() is that .map() returns a new array. If you need the result, 
+but do not wish to mutate 
 the original array, .map() is the clear choice. If you simply need to iterate over an array, forEach is a fine choice.
 ```
 
 ## In JavaScript, why is the “this” operator inconsistent?
 ```javascript
-The most important thing to understand is that a function object does not have a fixed this value — the value of this changes depending 
+The most important thing to understand is that a function object does not have a fixed this value — the value of this 
+changes depending 
 on how the function is called. We say that a function is invoked with some a particular this value — the this value is determined at invocation 
 time, not definition time.
 
@@ -295,9 +308,111 @@ console.log( [] == '0');
 [] is falsy and '0' is string , js is not able to coerce them to convert the to type which can be compared . so false is returned .
 ```
 
+## How to fix code
+```javascript
+const obj1 = {
+	a: 1,
+	b: 2,
+	getA() {
+		console.log(this.a);
+	},
+	getB() {
+		console.log(this.b);	
+	}
+}
+console.log('get A B');
+obj1.getA().getB();  // Uncaught TypeError: Cannot read property 'getB' of undefined
+
+## Solution:
+const obj1 = {
+	a: 1,
+	b: 2,
+	getA() {
+		console.log(this.a);
+		return this;
+	},
+	getB() {
+		console.log(this.b);	
+		return this;
+	}
+}
+```
+
+## deep clone, if i have obj2, then how to copy same with other object but should not change value 
+```javascript
+
+const obk2 = {
+	a: {
+		b: {
+			c: 1
+		}
+	}
+};		
+// how do i clone so i want create another obj where it should not copy reference ?
+
+// const clone = need to do something. so that it doesnt copy reference
+clone.a.b.c = 2;
+
+console.log(obj.a.b.c) // 2 but should not print  
+
+#### Solution 
+1. object .assign() // will work only for one level, a,b are obj but c is primitive
+2. deep cloning // json stringify
+```
+
+
+## How to combine two arrays, quick maximum sort
+```javascript
+const xa = [1,2,5,7,9];
+const xb = [2,5,7,12, 100];
+
+const xc = (xa + xb).sort( (a,b) => a-b)); // 1...92...100 this solution doesnt add ,
+const xc = (xa + xb).concat( (a,b) => a-b)); // this works but xb =[2, .....infinity.....100]. performance issue
+
+// is there any simeple alogo can do or if i have to manually do something ?
+#### Solution
+first a[] -> ele of each index and compare with  a to b. ex pick 2 push index.......if u reach 9 and what ever in b[] push directly
+// what if a[1,.......inifnity....9] // above solution doesnt work
+
+```
+
+## const num = 123456; find the length of number but should not convert to string.
+```javascript
+function findMaxMin(num) {
+	var numLen = 0;
+	while(num !=0 ) {
+		num = num / 10; // problem is when it will become 0, loops until smallest number
+		// Solution : float when u divide always integer and will always 0
+		numLen++;
+	}
+return numLen; 
+
+}
+console.log(findMaxMin(num)); // 6
+
+// How can we improve this algo ?
+// In js max length of number is 16 or 18, max length
+// need to implement binary search
+function findLenNumber(num) {
+var maxNumber = 100 00 00 00 00 00 00;  // or can use number.max
+while(maxNumber) {
+}
+}
+// solution to find
+```
+
 
 ```javascript
 ```
+
+
+```javascript
+```
+
+
+```javascript
+```
+
 
 ## Output out of the following code?
 ```javascript
