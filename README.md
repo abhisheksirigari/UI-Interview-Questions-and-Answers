@@ -10,13 +10,13 @@ Advantages:
 2) They allow new members to train for shorter periods and have less context before touching a system.
 3) Deployments are fluid and continuous for each service.
 4) They allow decoupling service logic on the basis of business responsibility
-5) They are more available as a single service having a bug does not bring down the entire system. This is 
+5) They are more available as a single service having a bug does not bring down the entire system. This is
 	called a single point of failure.
 6) Individual services can be written in different languages.
-7) The developer teams can talk to each other through API sheets instead of working on the same repository, 
+7) The developer teams can talk to each other through API sheets instead of working on the same repository,
 	which requires conflict resolution.
-8) New services can be tested easily and individually. The testing structure is close to unit testing compared 
-	to a monolith.
+8) New services can be tested easily and individually. The testing structure is close to unit testing
+	compared to a monolith.
 
 Microservices are at a disadvantage to Monoliths in some cases. Monoliths are favorable when:
 1) The technical/developer team is very small
@@ -32,8 +32,8 @@ Angular or any other libraries uses this prototype pattern
 
 ## What is Callback Hell?
 ```javascript
-The asynchronous function requires callbacks as a return parameter. When multiple asynchronous functions are chained 
-together then callback hell situation comes up.
+The asynchronous function requires callbacks as a return parameter. When multiple asynchronous functions are
+chained together then callback hell situation comes up.
 ```
 
 ## Diff between typescript number vs Number
@@ -60,14 +60,19 @@ Boolean, and String primitive types are treated as object types with the same pr
 
 S.O.L.I.D is an acronym for the first five object-oriented design (OOD) principles by Robert C. Martin.
 
-S - Single-responsiblity principle. A class should have one and only one reason to change, meaning that a class
+S - Single-responsiblity principle. A class should have one and only one reason to change, meaning that a 
+class
 	should have only one job.
 O - Open-closed principle. Objects or entities should be open for extension, but closed for modification.
-L - Liskov substitution principle. Let q(x) be a property provable about objects of x of type T. Then q(y) should 
+L - Liskov substitution principle. Let q(x) be a property provable about objects of x of type T. Then q(y) 
+should 
 	be provable for objects y of type S where S is a subtype of T.
-I - Interface segregation principle. A client should never be forced to implement an interface that it doesn't use 
+I - Interface segregation principle. A client should never be forced to implement an interface that it 
+doesn't 
+use 
 	or clients shouldn't be forced to depend on methods they do not use.
-D - Dependency Inversion Principle. Entities must depend on abstractions not on concretions. It states that the 
+D - Dependency Inversion Principle. Entities must depend on abstractions not on concretions. It states that 
+the 
 	high level module must not depend on the low level module, but they should depend on abstractions.
 
 ```
@@ -131,11 +136,12 @@ Note: JavaScript is case-sensitive and here we are using NULL instead of null.
 
 ## What is generator in JS?
 ```javascript
-Generators are functions which can be exited and later re-entered. Their context (variable bindings) will be 
-saved across re-entrances. 
-Generator functions are written using the function* syntax. When called initially, generator functions do not 
-execute any of their code, instead returning a type of iterator called a Generator. When a value is consumed 
-by calling the generator’s next method, the Generator function executes until it encounters the yield keyword.
+Generators are functions which can be exited and later re-entered. Their context (variable bindings) will 
+be saved across re-entrances. 
+Generator functions are written using the function* syntax. When called initially, generator functions do
+not execute any of their code, instead returning a type of iterator called a Generator. When a value is 
+consumed by calling the generator’s next method, the Generator function executes until it encounters the
+yield keyword.
 
 The function can be called as many times as desired and returns a new Generator each time, however each 
 Generator may only be iterated once.
@@ -157,8 +163,8 @@ objects that are initialized with values it copied from a prototype – or sampl
 pattern is also referred to as the Properties pattern.
 
 An example of where the Prototype pattern is useful is the initialization of business objects with values 
-that match the default values in the database. The prototype object holds the default values that are copied
-over into a newly created business object.
+that match the default values in the database. The prototype object holds the default values that are 
+copied over into a newly created business object.
 
 Classical languages rarely use the Prototype pattern, but JavaScript being a prototypal language uses this 
 pattern in the construction of new objects and their prototypes.
@@ -182,7 +188,8 @@ const doubled = a.forEach((num, index) => {
 
 --> map
 Iterates through the elements in an array.
-“Maps” each element to a new element by calling the function on each element, creating a new array as a result.
+“Maps” each element to a new element by calling the function on each element, creating a new array as a 
+result.
 const a = [1, 2, 3];
 const doubled = a.map(num => {
   return num * 2;
@@ -191,33 +198,36 @@ const doubled = a.map(num => {
 // doubled = [2, 4, 6]
 The main difference between .forEach and .map() is that .map() returns a new array. If you need the result, 
 but do not wish to mutate 
-the original array, .map() is the clear choice. If you simply need to iterate over an array, forEach is a fine choice.
+the original array, .map() is the clear choice. If you simply need to iterate over an array, forEach is a 
+fine choice.
 ```
 
 ## In JavaScript, why is the “this” operator inconsistent?
 ```javascript
-The most important thing to understand is that a function object does not have a fixed this value — the value of this 
-changes depending 
-on how the function is called. We say that a function is invoked with some a particular this value — the this value is determined at invocation 
-time, not definition time.
+The most important thing to understand is that a function object does not have a fixed this value — the value
+of this changes depending 
+on how the function is called. We say that a function is invoked with some a particular this value — the this 
+value is determined at invocation time, not definition time.
 
-1. If the function is called as a “raw” function (e.g., just do someFunc()), this will be the global object (window in a browser) 
-(or undefined if the function runs in strict mode).
+1. If the function is called as a “raw” function (e.g., just do someFunc()), this will be the global object
+(window in a browser) (or undefined if the function runs in strict mode).
 2. If it is called as a method on an object, this will be the calling object.
 3. If you call a function with call or apply, this is specified as the first argument to call or apply.
 4. If it is called as an event listener, this will be the element that is the target of the event.
-5. If it is called as a constructor with new, this will be a newly-created object whose prototype is set to the prototype property of 
-   the constructor function.
-6. If the function is the result of a bind operation, the function will always and forever have this set to the first argument of the 
-   bind call that produced it. (This is the single exception to the “functions don’t have a fixed this” rule — functions produced by 
-   bind actually do have an immutable this.)
+5. If it is called as a constructor with new, this will be a newly-created object whose prototype is set to
+   the prototype property of the constructor function.
+6. If the function is the result of a bind operation, the function will always and forever have this set to 
+   the first argument of the bind call that produced it. (This is the single exception to the “functions 
+   don’t have a fixed this” rule — functions produced by bind actually do have an immutable this.)
 7. In the global context or inside a function this refers to the window object.
-8. Inside IIFE (immediate invoking function) if you use "use strict", value of this is undefined. To pass access window inside IIFE 
-    with "use strict", you have to pass this.
-	While executing a function in the context of an object, the object becomes the value of this
-	Inside a setTimeout function, the value of this is the window object.
-9. If you use a constructor (by using new keyword) to create an object, the value of this will refer to the newly created object.
-10. You can set the value of this to any arbitrary object by passing the object as the first parameter of bind, call or apply
+8. Inside IIFE (immediate invoking function) if you use "use strict", value of this is undefined. To pass 
+   access window inside IIFE with "use strict", you have to pass this.
+   While executing a function in the context of an object, the object becomes the value of this
+   Inside a setTimeout function, the value of this is the window object.
+9. If you use a constructor (by using new keyword) to create an object, the value of this will refer to the 
+    newly created object.
+10. You can set the value of this to any arbitrary object by passing the object as the first parameter of bind,
+    call or apply
 11. For dom event handler, value of this would be the element that fired the event
 
 ```
@@ -225,13 +235,14 @@ time, not definition time.
 
 ## How would you compare two objects in JavaScript?
 ```javascript
-Basics: JavaScript has two different approaches for testing equality. Primitives like strings and numbers are compared by their value, 
-while objects like arrays, dates, and user defined objects are compared by their reference. This means it compares whether two objects are 
-referring to the same location in memory.
+Basics: JavaScript has two different approaches for testing equality. Primitives like strings and numbers are
+compared by their value, while objects like arrays, dates, and user defined objects are compared by their 
+reference. This means it compares whether two objects are referring to the same location in memory.
 
-Answer: Equality check will check whether two objects have same value for same property. To check that, you can get the keys for both the objects. 
-If the number of properties doesn't match, these two objects are not equal. Secondly, you will check each property whether they have the same value. 
-If all the properties have same value, they are equal.
+Answer: Equality check will check whether two objects have same value for same property. To check that, you 
+can get the keys for both the objects. If the number of properties doesn't match, these two objects are not 
+equal. Secondly, you will check each property whether they have the same value. If all the properties have 
+same value, they are equal.
 
 function isEqual(a, b) {
     var aProps = Object.getOwnPropertyNames(a),
@@ -256,8 +267,8 @@ function isEqual(a, b) {
 
 ## delete can delete but
 ```javascript
-Question: Look at the code below, I have a property in a object and I am creating a new object where I am setting it to a new value. 
-If I delete that property what will i get if I try to access that property?
+Question: Look at the code below, I have a property in a object and I am creating a new object where I am 
+setting it to a new value. If I delete that property what will i get if I try to access that property?
 
 var myObject = {
     price: 20.99,
@@ -273,13 +284,15 @@ console.log(customObject.get_price());
         
 Answer: You will see 20.99
 
-Explanation: This is very interesting question. When you create object.create(myObject) you are creating new object where the myObject 
-will be the parent of the newly created object. Hence the price property will be at the parent.
+Explanation: This is very interesting question. When you create object.create(myObject) you are creating 
+new object where the myObject will be the parent of the newly created object. Hence the price property 
+will be at the parent.
 
-When you are assigning some value to customObject.price, you are creating a new property on the child. This means, when you delete 
-customObject.price it deletes the price property in the customObject (in the child). However, when you call the method getprice, first 
-it looks for this.price in the child since the customObject doesn't have price property, JavaScript executor walks through the prototype 
-chain towards the parent. Since customObject was inherited from myObject and myObject has a price property, the get_price method returns the 
+When you are assigning some value to customObject.price, you are creating a new property on the child. This 
+means, when you delete customObject.price it deletes the price property in the customObject (in the child). 
+However, when you call the method getprice, first it looks for this.price in the child since the customObject 
+doesn't have price property, JavaScript executor walks through the prototype chain towards the parent. Since 
+customObject was inherited from myObject and myObject has a price property, the get_price method returns the 
 price from parent. Hence, you are getting 20.99
 
 ```
@@ -289,7 +302,8 @@ price from parent. Hence, you are getting 20.99
 Answer: true
 
 In short, the number 0 is falsy, the string "0" is not.
-JavaScript uses type Type Conversion to coerce any value to a Boolean in contexts that require it, such as conditionals and loops.
+JavaScript uses type Type Conversion to coerce any value to a Boolean in contexts that require it, such as 
+conditionals and loops.
 
 In first case
 
@@ -299,13 +313,14 @@ javascript uses coerceing and converts both to number and compares . Now 0==0 so
 In second case
 
 console.log( 0 == [] );
-Both are falsy (A falsy value is a value that translates to false when evaluated in a Boolean context ) . So now comparing false == false , 
-true value is returned .
+Both are falsy (A falsy value is a value that translates to false when evaluated in a Boolean context ) .
+So now comparing false == false , true value is returned .
 
 In 3rd case
 
 console.log( [] == '0'); 
-[] is falsy and '0' is string , js is not able to coerce them to convert the to type which can be compared . so false is returned .
+[] is falsy and '0' is string , js is not able to coerce them to convert the to type which can be compared.
+so false is returned .
 ```
 
 ## How to fix code
@@ -367,11 +382,13 @@ const xa = [1,2,5,7,9];
 const xb = [2,5,7,12, 100];
 
 const xc = (xa + xb).sort( (a,b) => a-b)); // 1...92...100 this solution doesnt add ,
-const xc = (xa + xb).concat( (a,b) => a-b)); // this works but xb =[2, .....infinity.....100]. performance issue
+const xc = (xa + xb).concat( (a,b) => a-b)); // this works but xb =[2, .....infinity.....100]. 
+performance issue
 
 // is there any simeple alogo can do or if i have to manually do something ?
 #### Solution
-first a[] -> ele of each index and compare with  a to b. ex pick 2 push index.......if u reach 9 and what ever in b[] push directly
+first a[] -> ele of each index and compare with  a to b. ex pick 2 push index.......
+if u reach 9 and what ever in b[] push directly
 // what if a[1,.......inifnity....9] // above solution doesnt work
 
 ```
@@ -1062,6 +1079,47 @@ function bubbleSort(arr) {
 }
 console.log(bubbleSort(array)); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 console.log("sort = " + array.sort()); // sort = 1,2,3,4,5,6,7,8,9
+```
+## Given a 2D array, print matrix in spiral format / clockwise manner.
+```javascript
+Input:  1    2   3   4
+        5    6   7   8
+        9   10  11  12
+        13  14  15  16
+Output: 1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10 
+Explanation: The output is matrix in spiral format. 
+
+
+var input = [
+                [ 1, 2, 3, 4], 
+                [ 5, 6, 7, 8], 
+                [ 9,10,11,12], 
+                [13,14,15,16]
+            ];
+
+let spiral = (mat) => {
+    if(mat.length && mat[0].length) {
+        mat[0].forEach(entry => { console.log(entry)})
+        mat.shift();
+        mat.forEach(item => {
+            console.log(item.pop())
+        });
+        spiral(reverseMatrix(mat))
+    }
+    return;
+}
+
+let reverseMatrix = (mat) => { 
+    mat.forEach(item => { 
+        item.reverse() 
+    }); 
+    mat.reverse(); 
+    return mat; 
+}
+
+console.log("Clockwise Order is:"); // 1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10 
+spiral(input);
+
 ```
 
 ## Commonly asked Javascript and Angular Questions
