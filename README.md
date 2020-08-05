@@ -126,6 +126,80 @@ when using strict mode the let or const keywords should be preferred to var in m
 
 ```
 
+## check if object is array or not
+```javascript
+var a = [], b = {};
+
+console.log(Object.prototype.toString.call(a).indexOf("Array")>-1); // true
+console.log(Object.prototype.toString.call(b).indexOf("Object")>-1); // true
+
+console.log(a.constructor.name == "Array"); // true
+console.log(b.constructor.name == "Object"); // true
+
+// This is the fastest among all methods (all browsers supported):
+function isArray(obj){
+    return !!obj && obj.constructor === Array;
+}
+
+// For simply checking against Object or Array without additional function call (speed).
+isArray()
+
+isArray = function(a) {
+    return (!!a) && (a.constructor === Array);
+};
+console.log(isArray(        )); // false
+console.log(isArray(    null)); // false
+console.log(isArray(    true)); // false
+console.log(isArray(       1)); // false
+console.log(isArray(   'str')); // false
+console.log(isArray(      {})); // false
+console.log(isArray(new Date)); // false
+console.log(isArray(      [])); // true
+isObject()
+
+isObject = function(a) {
+    return (!!a) && (a.constructor === Object);
+};
+console.log(isObject(        )); // false
+console.log(isObject(    null)); // false
+console.log(isObject(    true)); // false
+console.log(isObject(       1)); // false
+console.log(isObject(   'str')); // false
+console.log(isObject(      [])); // false
+console.log(isObject(new Date)); // false
+console.log(isObject(      {})); // true
+```
+
+## What will be the console.log statements print
+```javascript
+const obj = {
+  name: 'Billy',
+  sing: function () {
+      this.age = "20"
+    console.log('a' , this);
+    var anotherFunction = function() {
+        this.age = "30"
+       console.log('b', this);
+    }
+    anotherFunction();
+}
+  }
+obj.sing(); // first console will print properties of obj(name, age and sing) and second 
+// will print window object  
+
+// output: in browser console
+// a {name: "Billy", age: "20", sing: ƒ}age: "20"name: "Billy"sing: ƒ ()__proto__: Object
+// b Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+
+// explanation
+// First console will print properties of obj(name, age and sing) since the this inside sing 
+// belongs to const obj and second will print window object becase function belongs to 
+// window so this inside that will print window object.
+// a {name: "Billy", age: "20", sing: ƒ}
+// b Window {parent: Window, opener: null, top: Window, length: 4, frames: Window, …}
+
+```
+
 ## What is the value of typeof undefined == typeof NULL?
 ```javascript
 
