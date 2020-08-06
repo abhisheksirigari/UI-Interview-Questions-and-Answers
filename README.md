@@ -362,8 +362,7 @@ mycar = new Car("Ford")
 
 ```
 
-## Can you describe the main difference between a .forEach loop and a .map() loop and why you would 
-## pick one versus the other?
+## Main difference between .forEach and .map() loop. why you would pick one versus the other?
 ```javascript
 To understand the differences between the two, let’s look at what each function does.
 
@@ -1060,6 +1059,104 @@ function longest_palindrome(str1) {
     return maxp;
 }
 ```
+
+
+## How to sort an array by a date property or Sorting of array that contains date ?
+```javascript
+var dates = ['1/2/2019' , '11/12/2013', '1/1/1980', '11/1/1934']  
+
+###### Simplest Answer
+dates.sort(function(a,b){
+  // Turn your strings into dates, and then subtract them
+  // to get a value that is either negative, positive, or zero.
+  return new Date(b.date) - new Date(a.date);
+});
+###### More Generic Answer
+dates.sort(function(o1,o2){
+  if (sort_o1_before_o2)    return -1;
+  else if(sort_o1_after_o2) return  1;
+  else                      return  0;
+});
+
+```
+
+## How to stop event bubbling at specified div ?
+````javascript
+// example <div id ="1"> = <div id ="2"> x <div id="3"> = <div id="4"> evt => {console.log("here")}
+// Check for event.target !== id then execute statements or specified attribute
+```
+## What logs prints
+```javascript
+var x;
+(function test() {
+    console.log('x --' + x);
+})(); // this is self invoking so print undefine because x is not assigned any value yet
+var y = function() {
+    console.log('In y' + x); // function is not called from anywhere so this wont execute
+}
+another(); // this will call function another written below
+var x = 10;
+console.log(x); // will print 10 because x is assigned value 10
+
+function another() {
+    console.log(x); // will print undefine because x is not assigned any value yet
+}
+```
+
+## what prints first
+```javascript
+
+abc();
+
+function abc() {
+  console.log("1");
+}
+function abc() {
+  console.log("2");
+}
+function abc() {
+  console.log("3");
+}
+
+// 3. bcoz it will execute the last function statements. 
+```
+
+## Determine if two rectangles overlap each other?
+```javascript
+// This is how that code can be translated to JavaScript. Note that there is a typo in your code,
+// and in that of the article, as the comments have suggested. Specifically r2->right left should
+// be r2->right < r1->left and r2->bottom top should be r2->bottom < r1->top for the function to work.
+
+function intersectRect(r1, r2) {
+  return !(r2.left > r1.right || r2.right < r1.left || r2.top > r1.bottom || r2.bottom < r1.top);
+}
+
+###### Test case:
+var rectA = {
+  left:   10,
+  top:    10,
+  right:  30,
+  bottom: 30
+};
+
+var rectB = {
+  left:   20,
+  top:    20,
+  right:  50,
+  bottom: 50
+};
+
+var rectC = {
+  left:   70,
+  top:    70,
+  right:  90,
+  bottom: 90
+};
+
+intersectRect(rectA, rectB);  // returns true
+intersectRect(rectA, rectC);  // returns false
+```
+
 
 ## How to Get all Possible Combinations of Array with array length  
 ```javascript
