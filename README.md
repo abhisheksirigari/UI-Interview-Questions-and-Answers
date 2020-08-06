@@ -10,13 +10,13 @@ Advantages:
 2) They allow new members to train for shorter periods and have less context before touching a system.
 3) Deployments are fluid and continuous for each service.
 4) They allow decoupling service logic on the basis of business responsibility
-5) They are more available as a single service having a bug does not bring down the entire system. This is
-	called a single point of failure.
+5) They are more available as a single service having a bug does not bring down the entire system. This
+   is called a single point of failure.
 6) Individual services can be written in different languages.
 7) The developer teams can talk to each other through API sheets instead of working on the same repository,
-	which requires conflict resolution.
+   which requires conflict resolution.
 8) New services can be tested easily and individually. The testing structure is close to unit testing
-	compared to a monolith.
+   compared to a monolith.
 
 Microservices are at a disadvantage to Monoliths in some cases. Monoliths are favorable when:
 1) The technical/developer team is very small
@@ -171,6 +171,29 @@ function sum(a, b, c) {
 }
 
 ```
+
+## find largest number from a set of an array in javaScript
+````javascript
+function sortArray(arr) {
+    arr.sort(function compare(first, second) {
+	var firstsecond = '' + first + second;
+	var secondfirst = '' + second + first;
+	return firstsecond > secondfirst ? -1 : 1;
+    })
+}
+
+function getLargestNumber(arr) {
+    var largestNumber = arr.join('')
+    return largestNumber
+}
+
+var arr = [1, 3, 4];
+sortArray(arr);
+var result = getLargestNumber(arr);
+
+console.log(result); // 431
+````
+
 ##  What is the output of the following code?
 ```javascript
 
@@ -266,12 +289,86 @@ obj.sing(); // first console will print properties of obj(name, age and sing) an
 
 ```
 
+## find the element that isnt repeated and rest all repeated twice ?
+```javascript
+let repeatArr = [2, 3, 5, 4, 5, 3, 4];
+console.log("Element occurring once is " + findSingle(repeatArr, repeatArr.length));
+// OUTPUT: Element occurring once is 2
+
+function findSingle($ar, $ar_size) {
+    // Do XOR of all elements and return 
+    let $res = $ar[0];
+    for (let i = 1; i < $ar_size; i++) {
+	$res = $res ^ $ar[i];
+    }
+    return $res;
+}
+
+// One solution is to check every element if it appears once or not. Once an element with a 
+// single occurrence is found, return it. Time complexity of this solution is O(n2).
+
+###### A better solution is to use hashing.
+// 1) Traverse all elements and put them in a hash table. Element is used as key and the count of occurrences is used as the value in the hash table.
+// 2) Traverse the array again and print the element with count 1 in the hash table.
+// This solution works in O(n) time but requires extra space.
+
+// The best solution is to use XOR. XOR of all array elements gives us the number with a single occurrence. The idea is based on the following two facts.
+// a) XOR of a number with itself is 0.
+// b) XOR of a number with 0 is number itself.
+
+```
 ## What is the value of typeof undefined == typeof NULL?
 ```javascript
 
 The expression will be evaluated to true, since NULL will be treated as any other undefined variable.
 Note: JavaScript is case-sensitive and here we are using NULL instead of null.
 
+```
+
+## Inheritance in JavaScript
+```javascript
+// Inheritance is an important concept in object oriented programming. In the classical inheritance, 
+// methods from base class get copied into derived class.
+// In JavaScript, inheritance is supported by using prototype object. Some people call it 
+// "Prototypal Inheriatance" and some people call it "Behaviour Delegation".
+
+// Let's see how we can achieve inheritance like functionality in JavaScript using prototype object.
+// Let's start with the Person class which includes FirstName & LastName property as shown below.
+function Person(firstName, lastName) {
+    this.FirstName = firstName || "unknown";
+    this.LastName = lastName || "unknown";            
+}
+
+Person.prototype.getFullName = function () {
+    return this.FirstName + " " + this.LastName;
+}
+function Student(firstName, lastName, schoolName, grade)
+{
+    Person.call(this, firstName, lastName);
+
+    this.SchoolName = schoolName || "unknown";
+    this.Grade = grade || 0;
+}
+//Student.prototype = Person.prototype;
+Student.prototype = new Person();
+Student.prototype.constructor = Student;
+
+var std = new Student("James","Bond", "XYZ", 10);
+            
+alert(std.getFullName()); // James Bond
+alert(std instanceof Student); // true
+alert(std instanceof Person); // true
+
+###### Explanation
+// In the above example, we have defined Person class (function) with FirstName & LastName properties
+// and also added getFullName method to its prototype object.
+// Now, we want to create Student class that inherits from Person class so that we don't have to redefine 
+// FirstName, LastName and getFullName() method in Student class. so Student class that inherits Person class.
+// Please note that we have set Student.prototype to newly created person object. The new keyword creates 
+// an object of Person class and also assigns Person.prototype to new object's prototype object and then finally
+// assigns newly created object to Student.prototype object. Optionally, you can also assign Person.prototype 
+// to Student.prototype object.
+// Thus we can implement inheritance in JavaScript.
 ```
 
 ## What is generator in JS?
