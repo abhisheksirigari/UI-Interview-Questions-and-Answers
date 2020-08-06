@@ -25,9 +25,50 @@ Microservices are at a disadvantage to Monoliths in some cases. Monoliths are fa
 4) All developers must have context of all services.
 ```
 
-## Is Prototype pattern is good. why ?
+## Prototype Design Pattern In JavaScript. is good and why ?
 ```javascript
-Angular or any other libraries uses this prototype pattern
+// Angular or any other libraries uses this prototype pattern
+
+JavaScript's inheritance and prototype chain, the Prototype Pattern is used to instantiate new objects 
+by copying all of the properties of an existing object, creating an independent clone. Therefore, it is 
+a "creational" design pattern.
+
+Use Cases
+The Prototype pattern is particularly useful when the construction of a new object directly is inefficient 
+and expensive.
+
+Some of the cases for using this pattern are:
+1. Initializing an object goes through multiple long and performance killer processes such as sending multiple 
+AJAX requests to an API.
+2. Having to perform some operations on a large scale object or array in an object in order to use that object.
+3. In Node.js environment for example, when performing a comprehensive database operation to create an object.
+
+For those cases (and more), if another process needs to use this object, it would be convenient and practical 
+to clone that object instead of creating a new one.
+
+Example
+
+var myCar = { 
+  name: "Ford Escort",
+ 
+  drive: function () {
+    console.log( "Weeee. I'm driving!" );
+  },
+ 
+  panic: function () {
+    console.log( "Wait. How do you stop this thing?" );
+  }
+};
+ 
+// Use Object.create to instantiate a new car
+var yourCar = Object.create( myCar );
+ 
+// Now we can see that one is a prototype of the other
+console.log( yourCar.name );
+
+The name property is not actually being copied to the yourCar object. It is only on myCar object where 
+JavaScript goes and get it from because yourCar object is prototype-linked to myCar object.
+
 ```
 
 ## What is Callback Hell?
