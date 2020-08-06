@@ -69,6 +69,31 @@ console.log( yourCar.name );
 The name property is not actually being copied to the yourCar object. It is only on myCar object where 
 JavaScript goes and get it from because yourCar object is prototype-linked to myCar object.
 
+Explain the Prototype Design Pattern
+The Prototype Pattern creates new objects, but rather than creating non-initialized objects it returns 
+objects that are initialized with values it copied from a prototype – or sample – object. The Prototype 
+pattern is also referred to as the Properties pattern.
+
+An example of where the Prototype pattern is useful is the initialization of business objects with values 
+that match the default values in the database. The prototype object holds the default values that are 
+copied over into a newly created business object.
+
+Classical languages rarely use the Prototype pattern, but JavaScript being a prototypal language uses this 
+pattern in the construction of new objects and their prototypes.
+
+```
+
+## How to swap two numbers without using a temporary variable?
+```javascript
+let tx = 10;
+let ty = 5;
+console.log("before Swapping: tx = " + tx + ", ty= " + ty); // before Swapping: tx = 10, ty= 5
+
+// Code to swap 'tx' and 'ty'
+tx = tx + ty; // tx now becomes 15 
+ty = tx - ty; // ty becomes 10 
+tx = tx - ty; // tx becomes 5 
+console.log("After Swapping: tx = " + tx + ", ty= " + ty); // After Swapping: tx = 5, ty= 10
 ```
 
 ## What is Callback Hell?
@@ -271,18 +296,70 @@ function* makeRangeIterator(start = 0, end = Infinity, step = 1) {
 }
 ```
 
-## Explain the Prototype Design Pattern
+## JavaScript Classes
 ```javascript
-The Prototype Pattern creates new objects, but rather than creating non-initialized objects it returns 
-objects that are initialized with values it copied from a prototype – or sample – object. The Prototype 
-pattern is also referred to as the Properties pattern.
+A class is a type of function, but instead of using the keyword function to initiate it, we 
+use the keyword class, and the properties are assigned inside a constructor() method.
 
-An example of where the Prototype pattern is useful is the initialization of business objects with values 
-that match the default values in the database. The prototype object holds the default values that are 
-copied over into a newly created business object.
+Example:
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  present() {
+    return "I have a " + this.carname;
+  }
+}
 
-Classical languages rarely use the Prototype pattern, but JavaScript being a prototypal language uses this 
-pattern in the construction of new objects and their prototypes.
+mycar = new Car("Ford");
+document.getElementById("demo").innerHTML = mycar.present();
+
+###### Static Methods
+Static methods are defined on the class itself, and not on the prototype.
+
+That means you cannot call a static method on the object (mycar), but on the class (Car):
+
+Example
+Create a static method and call it on the class:
+
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  static hello() {
+    return "Hello!!";
+  }
+}
+
+mycar = new Car("Ford");
+
+//Call 'hello()' on the class Car:
+document.getElementById("demo").innerHTML = Car.hello();
+
+//and NOT on the 'mycar' object:
+//document.getElementById("demo").innerHTML = mycar.hello();
+//this would raise an error.
+
+#### Hoisting
+Unlike functions, and other JavaScript declarations, class declarations are not hoisted.
+
+That means that you must declare a class before you can use it:
+
+Example
+//You cannot use the class yet.
+//mycar = new Car("Ford")
+//This would raise an error.
+
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+}
+
+//Now you can use the class:
+mycar = new Car("Ford")
+
+
 ```
 
 ## Can you describe the main difference between a .forEach loop and a .map() loop and why you would 
