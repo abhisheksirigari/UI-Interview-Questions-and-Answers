@@ -594,6 +594,11 @@ function isEqual(a, b) {
 
 ```
 
+## One of your teammates accidentally deleted a branch, and has already pushed the changes to the central git repo. There are no other git repos, and none of your other teammates had a local copy. How would you recover this branch?
+```javascript
+answer: Check out the latest commit to this branch in the reflog, and then check it out as a new branch.
+
+```
 
 ## delete can delete but
 ```javascript
