@@ -325,6 +325,48 @@ Note: JavaScript is case-sensitive and here we are using NULL instead of null.
 
 ```
 
+## How to implement class constants in TypeScript?
+```javascript
+Answer: In TypeScript, the const keyword cannot be used to declare class properties. Doing so causes the compiler to an error with "A class member cannot have the 'const' keyword." TypeScript 2.0 has the readonly modifier:
+
+class MyClass {
+    readonly myReadonlyProperty = 1;
+
+    myMethod() {
+        console.log(this.myReadonlyProperty);
+    }
+}
+
+new MyClass().myReadonlyProperty = 5; // error, readonly
+
+```
+
+## Does TypeScript supports function overloading?
+```javascript 
+Answer
+Yes, TypeScript does support function overloading but the implementation is a bit different if we compare it to OO languages. We are creating just one function and a number of declarations so that TypeScript doesn't give compile errors. When this code is compiled to JavaScript, the concrete function alone will be visible. As a JavaScript function can be called by passing multiple arguments, it just works.
+
+class Foo {
+    myMethod(a: string);
+    myMethod(a: number);
+    myMethod(a: number, b: string);
+    myMethod(a: any, b?: string) {
+        alert(a.toString());
+    }
+}
+```
+
+
+## How do you squash last N commits into a single commit?
+```javascript
+answer:
+Squashing multiple commits into a single commit will overwrite history, and should be done with caution. However, this is useful when working in feature branches. To squash the last N commits of the current branch, run the following command (with {N} replaced with the number of commits that you want to squash):
+
+git rebase -i HEAD~{N}
+Upon running this command, an editor will open with a list of these N commit messages, one per line. Each of these lines will begin with the word “pick”. Replacing “pick” with “squash” or “s” will tell Git to combine the commit with the commit before it. To combine all N commits into one, set every commit in the list to be squash except the first one. Upon exiting the editor, and if no conflict arises, git rebase will allow you to create a new commit message for the new combined commit.
+
+```
+
 ## Inheritance in JavaScript
 ```javascript
 // Inheritance is an important concept in object oriented programming. In the classical inheritance, 
