@@ -82,6 +82,69 @@ Classical languages rarely use the Prototype pattern, but JavaScript being a pro
 pattern in the construction of new objects and their prototypes.
 
 ```
+## What is the result of console log, a function call and sentence?
+```javascript
+function a () {
+return 'Hello'
+}
+const sentence = a `Hi`;
+console.log(sentence);
+
+// Output: explanation a simple function returns hello, hi is a tagged templete.
+```
+
+## How would you check if a number is an integer?
+```javascript
+A very simply way to check if a number is a decimal or integer is to see if there is a remainder left when you divide by 1.
+function isInt(num) {
+  return num % 1 === 0;
+}
+
+console.log(isInt(4)); // true
+console.log(isInt(12.2)); // false
+console.log(isInt(0.3)); // false
+```
+
+## Function Overloading in JavaScript and example ?
+```javascript
+Unlike the other programming languages JavaScript Does not support Function Overloading.
+Here is a small code which shows that JavaScript does not support Function Overloading.
+
+function foo(arg1) {
+    console.log(arg1);
+}
+  
+/* The above function will be
+   overwriteen by the function 
+   below, and the below function 
+   will be executed for any number
+   and any type of arguments */
+function foo(arg1, arg2) {
+    console.log(arg1, arg2);
+}
+  
+// Driver code
+foo("Geeks")
+Output: 
+
+Geeks undefined
+The reason for the “undefined” in the output is: In JavaScript if two functions are defined with same name then the last defined function will overwrite the former function.
+So in this case the foo(arg1) was overwritten by foo(arg1,arg2), but we only passed one
+Argument (“Geeks”) to the function. It means that the second argument is undefined, So when we tried to print the second argument, it is printed as “undefined”.
+
+We have seen that function Overloading is not support in JavaScript, but we can implement the function Overloading on our own, which is pretty much complex when it comes to more number and more type of arguments. The following code will help you to understand how to implement function Overloading in JavaScript.
+```
+
+
+## What will be output of the following code blocks
+```javascript
+'use strict';
+const names = [‘John’, ‘Doe’];
+names.length = 0;
+console.log(names[0]); // => ??
+
+Answer: This is very simple question and looks like answer will be John. However there is special property of Javascript length. Once you assign it zero output will be undefined.
+```
 
 ## How to swap two numbers without using a temporary variable?
 ```javascript
