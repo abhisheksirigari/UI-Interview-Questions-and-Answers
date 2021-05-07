@@ -82,6 +82,7 @@ Classical languages rarely use the Prototype pattern, but JavaScript being a pro
 pattern in the construction of new objects and their prototypes.
 
 ```
+
 ## What is the result of console log, a function call and sentence?
 ```javascript
 function a () {
@@ -91,6 +92,19 @@ const sentence = a `Hi`;
 console.log(sentence);
 
 // Output: explanation a simple function returns hello, hi is a tagged templete.
+```
+
+## Can you explain why the srcset and sizes attributes were introduced?
+```javascript
+Before HTML5, the img tag only allowed us to specify a single source image.
+
+The problem that arose came with the introduction of smaller devices and the adoption of 
+responsive web design. As a general rule, we want to reduce load times and serve content to the 
+user only when it’s needed: Having a desktop-sized header image loading on small handheld devices 
+is unnecessary and costly.
+
+The srcset and sizes attributes solve this problem by allowing us to set an array of images that 
+will load dynamically based the media queries we set within the sizes attribute.
 ```
 
 ## How would you check if a number is an integer?
